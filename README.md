@@ -178,3 +178,10 @@ http://localhost:5173
   * Pastikan `client/.env` dan `server/.env` masuk dalam `.gitignore` dan tidak di-track git.
 
 
+  Screenshot / Bukti ada di FOLDER DOCS \ PRE 1
+
+Server: respon dari GET /api/health.
+
+Client: landing page yang dirender dari client/src/App.jsx.
+
+
