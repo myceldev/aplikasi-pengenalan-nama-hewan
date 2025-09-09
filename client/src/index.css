@@ -1,11 +1,11 @@
 @import "tailwindcss";
 
 /* Google Font */
-
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Outfit:wght@100..900&family=Rock+Salt&family=Sedgwick+Ave+Display&display=swap');
 
 /* Global */
 * {
-  font-family: "", sans-serif;
+  font-family: "Lato", sans-serif;
 }
 
 /* Hide Scrollbar */
@@ -15,8 +15,9 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
-@theme {
-  --color-primary: ;
-  --color-secondary: ;
-  --color-tertiary: ;
+:root {
+  --color-primary: #8AA624;
+  --color-secondary: #DBE4C9;
+  --color-tertiary: #FFFFF0;
+  --color-tertiary-orange: #FEA405;
 }
