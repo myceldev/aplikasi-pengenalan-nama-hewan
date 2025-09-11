@@ -22,6 +22,23 @@ const userSchema = new mongoose.Schema({
     enum: ['siswa', 'guru'],
     required: [true, 'Pilih peranmu: siswa atau guru?'],
   },
+  stars: {
+    type: Number,
+    default: 0,
+    required: function() { return this.role === 'siswa'; }
+  },
+  completedQuizzes: [{
+    quizId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Quiz',
+      required: true,
+    },
+    highestScore: {
+      type: Number,
+      required: true,
+      default: 0
+    }
+  }]
 }, {
     timestamps: true
 });
@@ -30,12 +47,11 @@ userSchema.pre('save', async function (next) {
   if (!this.isModified('password')) {
     return next();
   }
-  
   const salt = await bcrypt.genSalt(10);
   this.password = await bcrypt.hash(this.password, salt);
   next();
 });
 
 const User = mongoose.model('User', userSchema);
-
 export default User;
+
